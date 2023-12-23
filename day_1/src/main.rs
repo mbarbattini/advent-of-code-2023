@@ -3,6 +3,9 @@ use std::io::{BufReader, BufRead};
 use std::io::prelude::*;
 use std::fs::File;
 use std::collections::HashMap;
+use std::any::type_name;
+
+
 
 // TODO
 //
@@ -16,6 +19,15 @@ use std::collections::HashMap;
 // spelled number
 
 fn main() -> io::Result<()> {
+    let testing = String::from("a b c d e f g h i j k l m n o p q r z t u v w x y z");
+
+    let split_string = testing.split(' ').collect::<Vec<&str>>();
+    for word in split_string {
+        let gh = type_name;
+        println!("{}", gh);
+    }
+
+
     let spelled_numbers: Vec<&str> = vec![
         "one",
         "two",
@@ -27,7 +39,7 @@ fn main() -> io::Result<()> {
         "eight",
         "nine",
     ];
-    
+
     let mut number_map = HashMap::new();
     number_map.insert("one", "1");
     number_map.insert("two", "2");
